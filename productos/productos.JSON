@@ -1,20 +1,44 @@
 [
-    {
-        "marca" : "chango",
-        "categoria" : "azucar",
-        "precio" : 100,
-        "stock" : true
-    },
-    {
-        "marca" : "playadito",
-        "categoria" : "yerba",
-        "precio" : 200,
-        "stock" : true
-    },
-    {
-        "marca":"toro",
-        "categoria":"vino",
-        "precio":150,
-        "stock":false
-    }
+   {
+      "marca": "chango",
+      "categoria": "azucar",
+      "precio": 100,
+      "stock": true
+   },
+   {
+      "marca": "playadito",
+      "categoria": "yerba",
+      "precio": 200,
+      "stock": true
+   },
+   {
+      "marca": "toro",
+      "categoria": "vino",
+      "precio": 150,
+      "stock": false
+   },
+   {
+      "marca": "canciller",
+      "categoria": "vino",
+      "precio": 750,
+      "stock": true
+   },
+   {
+      "marca": "secco",
+      "categoria": "lima limon",
+      "precio": 500,
+      "stock": true
+   },
+   {
+      "marca": "secco",
+      "categoria": "naranja",
+      "precio": 500,
+      "stock": true
+   },
+   {
+      "marca": "secco",
+      "categoria": "manzana",
+      "precio": 500,
+      "stock": true
+   }
 ]

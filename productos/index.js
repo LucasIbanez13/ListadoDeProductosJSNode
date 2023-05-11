@@ -1,22 +1,37 @@
-const productos = [
-    {
-        marca : "chango",
-        categoria : "azucar",
-        precio : 100,
-        stock : true
-    },
-    {
-        marca : "playadito",
-        categoria : "yerba",
-        precio : 200,
-        stock : true
-    },
-    {
-        marca:"toro",
-        categoria:"vino",
-        precio:150,
-        stock:false
-    },
-]
+const fs = require('fs');
 
-module.exports = productos;
+const leerJSON = function(){
+    const productos = fs.readFileSync('./productos/productos.json', 'utf-8')
+    return productos
+} 
+
+const parsearJSON = function(json){
+    const jsonParseado = JSON.parse(json)
+    return jsonParseado
+}
+const escribirJSON = function(tareas){
+  const tareasString = JSON.stringify(tareas,null,3)
+  fs.writeFileSync('./productos/productos.json', tareasString, 'utf-8')
+  tareas = parsearJSON(leerJSON())
+  return tareas
+}
+
+module.exports = module.exports = {
+    listarProductos: (productos = parsearJSON(leerJSON())) => {
+      for (let i = 0; i < productos.length; i++) {
+        console.log(
+          `* ${productos[i].categoria} ${productos[i].marca} -> $${
+            productos[i].precio
+          }`
+        );
+      }
+      return productos;
+    },
+    guardarProductos : (nuevoProducto) => {
+        const productos = parsearJSON(leerJSON())
+        productos.push({
+            ...nuevoProducto
+        })
+        return escribirJSON(productos)
+    },
+ }
